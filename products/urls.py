@@ -4,7 +4,8 @@ from django.conf.urls import url
 from .views import home, item
 
 urlpatterns = [
-    path('home', home.index),
+    path('home', home.index,name='home'),
+    url(r'^home/(?P<department>\d+)/$',home.list_items,name='depItem'),
     # items management urls
     path('item', item.index, name='item_list'),
     url(r'^item/(?P<item_id>\d+)/$', item.read, name='item_read'),

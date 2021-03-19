@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse 
-from products.models import Department
-from products.models import Item
+from products.models.depart import Department
+from products.models.item import Item
+
 
 def index(request):
     # list all items from databas
-    items = Item.objects.select_related('department').all()
+    items = Item.objects.select_related('department').filter(active=1)
     # render template to view the items
     return render(request, 'item/index.html', {'all_items': items})
 
@@ -40,13 +41,19 @@ def read(request, item_id):
 def create(request):
     if request.method == "GET":
         # list departments
-        departments = Department.objects.all()
+        departments = Department.objects.filter(active=1)
         return render(request, 'item/add.html', {'all_departments' : departments})
     else:
         selected_department = Department.objects.get(id = request.POST.get('department_id'))
+        visible=False
+        if request.POST.get('active')=='on':
+            visible=True
+        uploaded_image = None
+        if request.FILES:
+            uploaded_image = request.FILES['image']
         Item.objects.create(
             name= request.POST.get('name'), description= request.POST.get('description') ,
-            price=request.POST.get('price') , department= selected_department)
+            price=request.POST.get('price') ,image=uploaded_image , department= selected_department,active=visible)
         # return HttpResponse('data saved')
         return redirect('item_list')
 

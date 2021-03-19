@@ -1,0 +1,74 @@
+[
+    {
+        "model": "products.item",
+        "pk": 1,
+        "fields": {
+            "name": "Tomato3",
+            "description": "this is a Tomato from dump",
+            "price": "1.00",
+            "image": "itemss/tomato_9jt9Y7B.jpg",
+            "department": 2,
+            "active": false
+        }
+    },
+    {
+    "model": "products.item",
+    "pk": 7,
+    "fields": {
+        "name": "Tomato",
+        "description": "this is a Tomato",
+        "price": "1.00",
+        "image": "itemss/tomato_9jt9Y7B.jpg",
+        "department": 2,
+        "active": false
+    }
+},
+{
+    "model": "products.item",
+    "pk": 23,
+    "fields": {
+        "name": "Apple",
+        "description": "this is an Apple",
+        "price": "3.00",
+        "image": "itemss/apple.png",
+        "department": 1,
+        "active": true
+    }
+},
+{
+    "model": "products.item",
+    "pk": 25,
+    "fields": {
+        "name": "banana",
+        "description": "this is a banana",
+        "price": "2.00",
+        "image": "itemss/banana.jpg",
+        "department": 1,
+        "active": true
+    }
+},
+{
+    "model": "products.item",
+    "pk": 26,
+    "fields": {
+        "name": "lemmon",
+        "description": "this is an Lemmon",
+        "price": "1.00",
+        "image": "itemss/lemmon.jpg",
+        "department": 2,
+        "active": false
+    }
+},
+{
+    "model": "products.item",
+    "pk": 27,
+    "fields": {
+        "name": "Apple2",
+        "description": "this is an Apple",
+        "price": "0.11",
+        "image": "itemss/apple_wy9HCk2.png",
+        "department": 1,
+        "active": true
+    }
+}
+]

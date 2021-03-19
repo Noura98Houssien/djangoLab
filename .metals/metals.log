@@ -1,0 +1,10 @@
+[0m2021.03.14 13:30:30 INFO  Started: Metals version 0.10.0 in workspace '/home/noura/DJANGO_ITI_41' for client vscode 1.54.2.[0m
+[0m2021.03.14 13:30:33 INFO  time: initialize in 3.54s[0m
+[0m2021.03.14 13:30:35 WARN  Build server is not auto-connectable.[0m
+[0m2021.03.14 13:30:35 WARN  no build tool detected in workspace '/home/noura/DJANGO_ITI_41'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
+[0m2021.03.14 13:31:20 ERROR [0m
+[0m2021.03.14 13:31:20 ERROR unknown repository type: lab1_scala[0m
+[0m2021.03.14 13:31:20 ERROR [0m
+[0m2021.03.14 13:31:20 INFO  giter8.Giter8 exit: 1[0m
+[0m2021.03.14 13:31:20 INFO  time: ran 'giter8.Giter8' in 0.88s[0m
+[0m2021.03.14 13:33:50 INFO  shutting down Metals[0m

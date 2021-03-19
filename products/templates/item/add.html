@@ -1,37 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+    {% extends 'layout/base.html' %}
     {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Items Management</title>
+    {% block title %}
+    Item Adding
+    {% endblock %}
+    
+    
+    {% block content %}
 
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    <form action="{% url 'item_add' %}" method="POST" enctype="multipart/form-data">
 
-</head>
-<body>
-
-    <h2>Item Management</h2>
-
-    <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="">blog</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">About</a></li>
-    </ul>
-
-    <form action="{% url 'item_add' %}" method="POST">
         {% csrf_token %}
         Name: <input type="text" name='name' > <br>
         Description: <input type="text" name="description" > <br>
         Price: <input type="number" name="price" > <br>
-        Department: <select name="department_id" id="">
+        image: <input type="file" id="image" name="image" accept="image/*">        Department: <select name="department_id" id="">
                 <option value="-1" selected>Select department</option>
                 {% for dept in all_departments %}
                 <option value="{{ dept.id }}">{{ dept.title }}</option>
                 {% endfor %}
         </select> <br>
+        Active: <input type="checkbox" name="active" > <br>
         <button>Save</button>
     </form>
 
@@ -40,5 +28,6 @@
     </div>
     
     
-    </body>
-    </html>
+    <!-- </body> -->
+    <!-- </html> -->
+    {% endblock %}

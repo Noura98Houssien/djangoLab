@@ -1,25 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Items Management</title>
+{% extends 'layout/base.html' %}
+{% load static %}
+{% block title %}
+Item Read
+{% endblock %}
 
-    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
-</head>
-<body>
-
-    <h2>Item Management</h2>
-
-    <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="">blog</a></li>
-        <li><a href="">Contact</a></li>
-        <li><a href="">About</a></li>
-    </ul>
+{% block content %}
 
     <table>
         <tr>
@@ -28,6 +14,11 @@
           <th>Price</th>
           <th>department</th>
           <th>description</th>
+          <th>Image</th>
+
+         
+
+
         </tr>
       
         <tr>
@@ -36,7 +27,11 @@
           <td>{{item_data.price}}</td>
           <td>{{ item_data.department.title }}</td>
           <td>{{ item_data.description }}</td>
-              
+          {% if item_data.image %}
+              <td>
+              <img src="{{ item_data.image.url }}" width="50" height="50" alt="{{item_data.name}}"/>
+            </td>
+          {% endif %}   
         </tr>
         
       </table>
@@ -45,6 +40,4 @@
         <p>Created by ITI</p>
     </div>
     
-    
-    </body>
-    </html>
+    {% endblock %}

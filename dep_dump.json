@@ -1,0 +1,20 @@
+[
+{
+    "model": "products.department",
+    "pk": 1,
+    "fields": {
+        "title": "Fruits",
+        "created_at": "2021-03-19T04:45:40Z",
+        "active": true
+    }
+},
+{
+    "model": "products.department",
+    "pk": 2,
+    "fields": {
+        "title": "Vegetables",
+        "created_at": "2021-03-19T04:46:18Z",
+        "active": true
+    }
+}
+]

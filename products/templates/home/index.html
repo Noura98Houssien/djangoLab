@@ -183,7 +183,7 @@
                         </div>
                         <ul>
                             {% for department in all_departments %}
-                            <li><a href="#">{{ department.title }}</a></li>
+                            <li><a href="{% url 'home' %}?department={{department.id}}">{{ department.title }}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -227,33 +227,17 @@
     <!-- Categories Section Begin -->
     <section class="categories">
         <div class="container">
-            <div class="row">
+            <div class="row" id='items'>
                 <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-1.jpg' %}">
-                            <h5><a href="#">Fresh Fruit</a></h5>
+                  {% for item in all_items %}
+                    <div class="col-lg-3" >
+                        <div class="categories__item set-bg" img="item.image.url">
+                            <h5><a href="#">{{item.department.title}}</a></h5>
                         </div>
+                   {% endfor %}
                     </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-2.jpg' %}">
-                            <h5><a href="#">Dried Fruit</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-3.jpg' %}">
-                            <h5><a href="#">Vegetables</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-4.jpg' %}">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="{% static 'img/categories/cat-5.jpg' %}">
-                            <h5><a href="#">drink fruits</a></h5>
-                        </div>
-                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
